@@ -108,7 +108,8 @@ h6 {
 
 
 .bg-trans-light-gray {
-    background-color:rgba(255, 255, 255, 0.95);
+    /* background-color:rgba(255, 255, 255, 0.95); */
+    background-color: #000;
 }
 
 .bg-halo {
@@ -134,8 +135,8 @@ h6 {
     width: 100%;
     height: 100%;
     z-index: -10;
-    /* background-color: #000; */
-    background: url("{{ '/img/volume_rendering.webp' | relative_url }}") no-repeat center center;
+    background-color: #000;
+    /* background: url("{{ '/img/volume_rendering.webp' | relative_url }}") no-repeat center center; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -145,6 +146,7 @@ h6 {
 .border-black {
     border-style: solid;
     border-width: 5px;
+    border-color: #000;
 }
 
 .border-separate {
@@ -1180,3 +1182,94 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #fed136;
 }
+
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+#page-top {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+main#main {
+    flex: 1 0 auto; /* allow main content to grow and push footer down */
+}
+footer#footer {
+    flex-shrink: 0;
+}
+
+/* Navbar variants controlled via per-page front-matter:
+   - set `navbar_transparent: true` in a page's front matter for a transparent navbar (index)
+   - default/other pages will use solid background (#222)
+   We keep the original shrink rule for compatibility, but we do not load the shrink script by default.
+*/
+.navbar-default.navbar-transparent {
+    background-color: transparent !important;
+    /* remove background transition so the change (or lack of change) is immediate */
+    transition: none !important;
+}
+
+.navbar-default.navbar-solid {
+    background-color: #222 !important;
+    transition: none !important;
+}
+
+@media(min-width:768px) {
+    /* ensure padding behavior remains consistent when switching variants */
+    .navbar-default.navbar-solid {
+        padding: 25px 0;
+        background-color: #222 !important;
+    }
+
+    .navbar-default.navbar-transparent {
+        padding: 25px 0;
+        background-color: transparent !important;
+    }
+
+    /* keep shrink rule present (no-op unless script is enabled on page) */
+    .navbar-default.navbar-shrink {
+        padding: 10px 0;
+        background-color: #222;
+    }
+}
+
+    /* Stronger overrides to ensure a visibly shorter navbar across all sizes */
+    .navbar-default .navbar-brand img,
+    .navbar-default .navbar-brand .navbar-brand-logo {
+        max-height: 40px;
+        height: auto;
+        display: inline-block;
+    }
+
+    .navbar {
+        min-height: 44px !important; /* override Bootstrap default */
+    }
+
+    .navbar-default {
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
+    }
+
+    .navbar-default .navbar-brand {
+        height: 44px;
+        line-height: 44px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+    }
+
+    @media(min-width:768px) {
+        .navbar-default {
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+        }
+        .navbar-default .navbar-brand {
+            height: 48px;
+            line-height: 48px;
+        }
+    }

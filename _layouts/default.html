@@ -42,7 +42,9 @@
 
     {% include navbar.html %}
 
-    {{ content }}
+    <main id="main" role="main">
+        {{ content }}
+    </main>
 
     {% include footer.html %}
 
@@ -229,7 +231,12 @@
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="{{ '/js/classie.js' | relative_url }}"></script>
+    {%- comment -%} The scroll/shrink script is kept in the repo but not loaded by default.
+        To enable scroll-based shrinking on a specific page set `header_animated: true` in that
+        page's front matter. We do not modify the file `/js/cbpAnimatedHeader.js` per requirement. {%- endcomment -%}
+    {% if page.header_animated %}
     <script src="{{ '/js/cbpAnimatedHeader.js' | relative_url }}"></script>
+    {% endif %}
 
     <!-- Contact Form JavaScript -->
     <script src="{{ '/js/jqBootstrapValidation.js' | relative_url }}"></script>

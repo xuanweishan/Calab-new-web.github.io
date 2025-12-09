@@ -1,5 +1,6 @@
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top" id="nav-bar">
+{%- assign _transparent = page.navbar_transparent -%}
+<nav class="navbar navbar-default navbar-fixed-top {% if _transparent %}navbar-transparent{% else %}navbar-solid{% endif %}" id="nav-bar">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -10,7 +11,7 @@
                 <span class="icon-bar"></span>
             </button>
             <!--<a class="navbar-brand page-scroll" href="#page-top">CA lab</a>-->
-            <a class="navbar-brand page-scroll" href="{{ '/index.html' | relative_url }}#page-top" style="padding:0;"><img src="{{ '/img/lab logo.webp' | relative_url }}" height="100%" ></a>
+            <a class="navbar-brand page-scroll" href="{{ '/index.html' | relative_url }}#page-top" style="padding:0;"><img src="{{ '/img/lab logo.webp' | relative_url }}" alt="CA Lab logo" class="navbar-brand-logo" /></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
