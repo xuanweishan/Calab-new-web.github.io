@@ -3,15 +3,15 @@ name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
   # Runs on pushes targeting the default branch
-  #push:
-  #  branches: ["main"]
+  push:
+    branches: ["Test-CDN/jekyll-collection", "main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -28,13 +28,45 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install bibtexparser pyyaml latexcodec
+      - name: Run conversion script
+        run: python _tools/bib_to_yml.py
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add _data/publications.yml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            # 使用 [skip ci] 避免觸發重複的部署工作流
+            git commit -m "chore: auto-update publications.yml [skip ci]"
+            git push
+          fi
+
+      # --- NEW: Setup Ruby and Build with Plugins ---
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2' # Specify Ruby version
+          bundler-cache: true # Runs 'bundle install' and caches gems automatically
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+        # We rely on the baseurl in _config.yml to avoid issues with manual overrides
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+        # with:
+        #   source: ./
+        #   destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

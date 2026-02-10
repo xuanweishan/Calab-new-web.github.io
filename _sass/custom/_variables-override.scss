@@ -1,0 +1,14 @@
+// --- Brand Colors ---
+$custom-primary-color:             #fed136;
+
+// --- Bootstrap Variable Overrides ---
+$primary:              $custom-primary-color;
+
+// --- Typography ---
+$font-family-base: 'Montserrat', sans-serif;
+$font-weight-normal: 400;
+$font-weight-bold:   700;
+
+// --- Components Overrides ---
+$navbar-dark-hover-color:   $primary;
+$navbar-dark-color:        #ffffff;

@@ -1,21 +1,55 @@
 # Jekyll configuration for GitHub Pages
 title: Computational Astrophysics Lab
 description: NTU Computational Astrophysics Lab
+author: CA Lab
 url: "https://vivi235711.github.io"
 baseurl: "/Calab-new-web.github.io"
 
 # Build settings
 markdown: kramdown
 exclude:
+  - .github/workflows/jekyll-gh-pages.yml
   - README.md
   - LICENSE
   - .gitignore
-  - script/
   - Gemfile
   - Gemfile.lock
-  - vendor/
-  - css/img
-  - css/video
+  - "/vendor/"
+  - _tools/export-bibtex.bib
+  - _tools/bib_to_yml.py
 
 # Ensure assets are served from root
 relative_permalinks: false
+
+collections:
+  useful:
+    output: false
+    permalink: /useful/:path/
+  courses:
+    output: false # Courses usually don't need individual pages
+    permalink: /courses/:path/
+  projects:
+    output: false
+    permalink: /projects/:name/ # Standardizing the URL structure
+
+plugins:
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  collection: projects
+  permalink: '/page/:num/'
+  per_page: 5
+  sort_field: date
+  sort_reverse: true
+  trail:
+    before: 2 # How many pages to show before current
+    after: 2
+  strict: false
+
+
+
+sass:
+  # The style option controls the output format of the compiled CSS.
+  style: compressed
+  sourcemap: always

@@ -1,0 +1,44 @@
+---
+layout: default
+title: FDM - CALab
+permalink: /research/fdm/
+
+pagination:
+  enabled: true
+  collection: projects
+  per_page: 5
+  tag: "FDM"
+  permalink: /:num/
+  trail:
+    before: 2
+    after: 2
+
+hero_title: FDM
+hero_bg_image: /assets/img/colliding_waveDM_halo.webp
+---
+
+<section id="FDM-archive" class="py-5 container">
+
+{% for project in paginator.posts %}
+  {% assign is_featured = false %}
+  {% if site.data.research_section.fdm_highlights contains project.slug %}
+    {% assign is_featured = true %}
+  {% endif %}
+  {% include project_card.html project=project index=forloop.index featured=is_featured %}
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+    {% include pagination.html %}
+{% endif %}
+
+{% capture back_url %}{{ '/research/' | relative_url }}{% endcapture %}
+{% capture go_url %}{{ '/publications/' | relative_url }}?tag=fdm{% endcapture %}
+{% include project_navigation.html 
+    back_url=back_url
+    back_text="Back to Research" 
+    go_url=go_url
+    go_text="View Related Publications"
+    go_icon="fa-book"
+%}
+
+</section>

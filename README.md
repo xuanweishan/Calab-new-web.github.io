@@ -1,78 +1,148 @@
-## Website
-[CA Lab Website](https://chunyen-chen.github.io/Calab-new-web.github.io/)
+# Computational Astrophysics Lab (CALab) Website
+
+Welcome to the official repository for the **Computational Astrophysics Lab (CALab)** website. This site is built with [Jekyll](https://jekyllrb.com/) and [Bootstrap 5](https://getbootstrap.com/), hosted on GitHub Pages.
+
+---
+
+## 📑 Table of Contents
+1. [Quick Maintenance (GitHub Web Interface)](#1-quick-maintenance-github-web-interface)
+   - [Update Members](#-update-members)
+   - [Add/Update Research Projects](#-addupdate-research-projects)
+   - [Manage Highlights & News](#-manage-highlights--news)
+   - [Update Courses & Useful Links](#-update-courses--useful-links)
+2. [Publications Management (Automatic)](#2-publications-management-automatic)
+3. [Website Architecture](#3-website-architecture)
+4. [Developer Environment & Setup](#4-developer-environment--setup)
+5. [Site Standards & Guidelines](#5-site-standards--guidelines)
+
+---
+
+## 1. Quick Maintenance (GitHub Web Interface)
+
+You can maintain most of the website's content without any coding knowledge by using the GitHub "Edit" (pencil icon) button.
+
+### 👥 Update Members
+Member information is stored in `_data/members.yml`.
+1. Navigate to `_data/members.yml`.
+2. Click the **pencil icon** to edit.
+3. **Add a member**: Copy below block and update the details (name, role, position, image path, etc.).
+   ```yaml
+   - english_name: "Firstname Lastname"
+     native_name: "姓名"
+     role: "postdoc"                  # Use roles from _data/member_roles.yml
+     image: "/assets/img/member/name.webp"
+     website: "https://..."
+     email: "user@example.com"
+     github: "username"
+      bio:
+       - "Research interest line 1"
+       - "Line 2"
+     aliases: ["Lastname, F.", "Firstname L."] # Used to bold name in Publications
+   ```
+4. **Alumni/Previous Members**: Simply change `role` to `previous`. They will automatically move to the "Previous Members" page.
+5. **Images**: Upload square (1:1) WebP images to `assets/img/member/`.
+
+### 🚀 Add/Update Research Projects
+Projects are individual Markdown files in `_projects/`.
+1. **Types of Projects**:
+   - **Archive Projects**: Standard research updates. Use tags like `FDM`, `GAMER_app`, or `GAMER_dev`.
+   - **Main Topic Projects**: These appear on the "Research" landing page. They MUST have `tags: ["main"]` and a `modal_id`.
+2. **Add New**: Create a file like `_projects/2026-new-study.md`.
+3. **Template**:
+   ```yaml
+   ---
+   title: "Study Title"
+   date: 2026-02-11
+   tags: ["FDM"]             # Categorizes the project
+   image: "/assets/img/..."  # Thumbnail image
+   link: "https://doi.org/." # External paper link
+   link_text: "Journal Ref"  # Text for the link button
+   ---
+   Executive summary of the project...
+   ```
+
+### 🏆 Manage Highlights & News
+The special "Highlights" on the News and Research Archive pages are controlled by `_data/research_section.yml`.
+- Add the **filename (slug)** of a project to the corresponding list:
+  ```yaml
+  research_highlights:
+    - project-slug-1
+    - project-slug-2
+  fdm_highlights:
+    - project-slug-3
+    - project-slug-4
+  ```
+
+### 📚 Update Courses & Useful Links
+- **Courses**: Managed in `_courses/`. Edit the Markdown files to update syllabus or links.
+- **Useful Links**: Managed in `_useful/`. Add new links or categories by editing the files there.
+
+---
+
+## 2. Publications Management (Automatic)
+
+We use an automated pipeline to handle publications. **Do not edit `_data/publications.yml` directly!**
+
+1. **Step**: Edit `_tools/export-bibtex.bib` and add your BibTeX entries.
+2. **Automation**: A GitHub Action automatically runs `_tools/bib_to_yml.py` to:
+   - Convert BibTeX to YAML.
+   - Match authors against our member list (and bold them).
+   - Convert LaTeX journal macros (e.g., `\apj`) to full names.
+   - **Preserve Tags**: If you manually add `tags: ["FDM"]` to an entry in `_data/publications.yml`, the script will remember it even when the bib is updated (as long as the title stays the same).
+
+---
+
+## 3. Website Architecture
+
+| Folder/File | Purpose |
+| :--- | :--- |
+| `_data/` | YAML files for Members, Publications, and Navigation. |
+| `_projects/` | The core collection of research updates. |
+| `_courses/` | Course materials and syllabus. |
+| `_useful/` | Curated links for lab members. |
+| `_includes/` | Reusable components (Navbar, Cards, Modals). |
+| `_layouts/` | Page templates (Default). |
+| `_sass/` | Custom styling and Bootstrap overrides. |
+| `_tools/` | Tools for automatic updates. |
+| `assets/` | Static assets: `img/`, `video/`, `js/`, `css/`. |
+| `research/` | Page for research projects. (Entrance from research pages' modal) |
+| `_config.yml` | Configuration file for Jekyll. |
+| `Gemfile` | Gemfile for Jekyll. |
 
 
-## Reference
-1. [Original reference](https://github.com/learning-zone/website-templates)
-1. [Font Awesome](https://fontawesome.com/v6/download)
+---
 
+## 4. Developer Environment & Setup
 
-## Maintenance
-1. Rules of the home page
-   * less than 5 news (news in home should be happened in previous year or this year)
-   * less than 12 members
-   * less than 5 publications
-   * less than 6 courses
+### Requirements
+- **Ruby 3.0+** & **Bundler**
+- **Python 3.9+** (for publication script)
 
-1. Add a new publication
-   * Use the `script/bib2html.py`
+### Local Launch
+1. `bundle install`
+2. `bundle exec jekyll serve --baseurl ""`
+3. Open `http://127.0.0.1:4000/`
 
-1. Picture
-   * File format: `.webp` would be best.
-   * Sponser picture size: 200x50
-   * Project picture size: 400x289 / 600x450
-   * Member  picture size: 225x225 (best), or a square img (size can be random)
+### Deployment
+Deployment is automatic! Any push to the `main` branch triggers:
+1. Publication script conversion.
+2. Jekyll build.
+3. GitHub Pages deployment.
 
-1. Video
-   * File format: `.webm` would be the best.
+---
 
-1. Add a new member
-   * Image size
-   * links
-   * set the id and class
+## 5. Site Standards & Guidelines
 
-1. Minify the CSS
-   * use the `script/minifyCSS.py` (not tested yet)
+### 🖼️ Media
+- **Format**: Use **WebP** for images and **WebM** for videos whenever possible for better performance.
+- **Size**: Member photos should be **square** (e.g., 400x400px).
+- **Video**: Laboratory/Background videos should be muted and under 10MB.
 
-1. Common html part
-   * the common html is placed under `script/common/`
-   * use the `script/replace_content.py` to replace the content
+### 🏷️ Naming
+- **Files**: Use `kebab-case` (e.g., `my-new-paper.md`).
+- **Tags**: Stick to consistent tags: `FDM`, `GAMER_app`, `GAMER_dev`, `main`.
 
-## Known bugs
-1. `background-attachment: fixed;` does not work on any ios devices. See [here](https://caniuse.com/?search=background-attachment%3A).
-Current [solution](https://stackoverflow.com/questions/26372127/background-fixed-no-repeat-not-working-on-mobile).
+---
 
-## Tips
-1. Add a special character in HTML.
-   * [Greek](https://www.thoughtco.com/html-codes-greek-characters-4062212)
-   * [German](https://websitebuilders.com/tools/html-codes/german/)
-   * [Math](https://www.toptal.com/designers/htmlarrows/math/)
-   * [Bar over character](https://stackoverflow.com/questions/12402831/print-a-with-bar-over-it-in-html)
-   * [Power of character](https://www.w3schools.com/tags/tag_sup.asp)
-
-1. Check if the CSS parameter is available across all devices
-   * [Can I Use](https://caniuse.com/)
-
-## TODO
-### Warning
-* clean the warning from the map
-
-### Before to go
-* clean all the empty links
-* link all the members to their section in member page
-* Add the readme or instruction about the maintenance of website
-* fill the words which need to be filled
-* check the mobile version (include the css setting and different OS)
-* re-layout the footer
-* use the minimized .css and .js
-
-### Optimizations
-* let the content change width to be a variable in css (complex!!!)
-* Try to let the background of contact to be fixed
-* check the figure of project and member => use github workflow?
-* the publication filters initialized as hide but still show at start
-* sort button of publucation?
-* a fold navbar e.g. (member => prof, RA, PHD...)
-* fill term of use and privacy policy at footer [This](https://www.termsofusegenerator.net) and [This](https://termify.io/privacy-policy-generator?gad_source=1&gclid=CjwKCAiAopuvBhBCEiwAm8jaMSbkpk0Mk7J4fZngmu3RuioKEHaxlYKaBKgx_55PW-REAaizBIze5BoC0NIQAvD_BwE)
-* optimize the load speed (https://pagespeed.web.dev/ or use the Edge insight)
-* share the footer and the header
+**Maintained by**: CALab Team
+**Last Updated**: February 2026

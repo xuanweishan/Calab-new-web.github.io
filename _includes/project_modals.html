@@ -1,0 +1,66 @@
+{% assign all_projects = site.projects | sort: 'sort_order' %}
+
+{% for project in all_projects %}
+
+<div class="modal fade" id="portfolioModal-{{ project.modal_id }}" tabindex="-1" aria-labelledby="modalLabel-{{ project.modal_id }}" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content bg-body-tertiary">
+
+
+            <div class="modal-body pt-0">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+
+                            <div class="text-center my-4">
+                                <h2 class="text-uppercase mb-1">{{ project.title }}</h2>
+                            </div>
+
+                            {% if project.image %}
+                            <img class="img-fluid d-block mx-auto mb-4 border rounded img-project-modal" 
+                                 src="{{ project.image | relative_url }}" 
+                                 alt="{{ project.title }} main image">
+                            {% endif %}
+
+                            <div class="text-start mb-4 markdown-content">
+                                {{ project.content }}
+
+                                {% comment %} 
+                                Render extra metadata (e.g., date, client, category) from Front Matter if present 
+                                {% endcomment %}
+                                {% if project.date or project.client or project.category %}
+                                <ul class="list-unstyled mt-3 text-secondary small">
+                                    {% if project.date %}<li><i class="fa-solid fa-calendar-alt me-2"></i>Date: {{ project.date }}</li>{% endif %}
+                                    {% if project.client %}<li><i class="fa-solid fa-user me-2"></i>Client: {{ project.client }}</li>{% endif %}
+                                    {% if project.category %}<li><i class="fa-solid fa-tag me-2"></i>Category: {{ project.category }}</li>{% endif %}
+                                </ul>
+                                {% endif %}
+
+                            </div>
+
+                            {% assign go_url = nil %}
+                            {% if project.research_url %}
+                                {% capture go_url %}{{ project.research_url | relative_url }}{% endcapture %}
+                            {% endif %}
+                            
+                            {% include project_navigation.html 
+                                back_modal_dismiss=true
+                                back_text="Close Project"
+                                back_icon="fa-xmark"
+                                go_url=go_url
+                                go_text="See More"
+                                go_icon="fa-arrow-right"
+                                btn_size="btn-lg"
+                            %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}

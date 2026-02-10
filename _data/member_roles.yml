@@ -1,0 +1,15 @@
+roles:
+  - id: faculty
+    title: Faculty
+  - id: postdoc
+    title: Postdoctoral Research Fellows
+  - id: doctoral
+    title: Doctoral Students
+  - id: master
+    title: Master Students
+  - id: undergraduate
+    title: Undergraduate Students
+  - id: research-assistants
+    title: Research/Administrative Assistants
+  - id: previous
+    title: Previous Members

@@ -1,283 +1,77 @@
 ---
 layout: default
 title: Computational Astrophysics Lab
-navbar_transparent: true
-header_animated: false
+permalink: /
+
+bg_image: /assets/img/volume_rendering.webp
 ---
 
-<!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in opening-animation">NTU Computational Astrophysics Lab</div>
-                <div class="intro-heading opening-animation">Cool things about &psi;DM</div>
-                <!--<div class="opening-animation"><a href="#about" class="page-scroll-slow btn btn-xl">Tell Me More</a></div>-->
-                <div class="opening-animation-from-bottom">
-                    <a href="#about" class="page-scroll-slow">
-                        <i class="fa-solid fa-chevron-circle-down" style="font-size:50px;color:#fff;"></i>
-                    </a>
-                </div>
+<section id="hero" class="masthead-full d-flex align-items-center">
+    <div class="container text-center text-white text-shadow-dark">
+        <!-- Main Title -->
+        <h1 class="display-4 fw-bolder mb-4">NTU Computational Astrophysics Lab</h1>
+        
+        <!-- Subtitle -->
+        <p class="display-6 fw-normal mb-5">High-Performance Simulations of the Universe</p>
+
+        <!-- Dynamic Scroll Indicator -->
+        <div class="mt-5">
+            <a href="#about" class="text-white text-decoration-none">
+                <i class="fa-solid fa-circle-chevron-down fa-3x"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-2">
+    <div class="container py-3 border bg-glass">
+        <div class="row pb-2">
+            <div class="col-12 text-center">
+                <h2 class="fw-bold">About Us</h2>
             </div>
         </div>
-    </header>
 
-    <!-- About Us Section -->
-    <section id="about" class="anchor-offset" style="padding:0;">
-        <div class="container bg-trans-light-gray border-black" style="padding-bottom:10px;">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About Us</h2>
+        <div class="row align-items-center g-5 px-3">
+            <div class="col-lg-7 pb-4 g-5">
+                <p class="lead">
+                    The Computational Astrophysics Lab (CALab) uses large-scale numerical simulations to explore the physics of the Universe.
+                </p>
+
+                <div class="mb-4">
+                    <h4 class="h6 mb-3">Our research directions:</h4>
+
+                    <div class="mb-3 align-items-start d-flex">
+                        <span class="badge rounded-pill monospaced text-primary mx-2">1.</span>
+                        <span>Investigating the distinctive wave nature of fuzzy dark matter</span>
+                    </div>
+                    <div class="mb-3 align-items-start d-flex">
+                        <span class="badge rounded-pill monospaced text-primary mx-2">2.</span>
+                        <span>Developing GAMER, a multi-GPU-accelerated AMR code for HPC simulations</span>
+                    </div>
+                    <div class="mb-3 align-items-start d-flex">
+                        <span class="badge rounded-pill monospaced text-primary mx-2">3.</span>
+                        <span>Conducting collaborative, GAMER-based projects spanning galaxy clusters to star formation</span>
+                    </div>
                 </div>
+
+                <p class="small text-muted mb-4">
+                    See <a href="{{ '/research' | relative_url }}" class="text-decoration-none border-bottom">Research</a> and
+                    <a href="{{ '/publications' | relative_url }}" class="text-decoration-none border-bottom">Publications</a> for details.
+                </p>
+
+                <a href="{{ '/contact' | relative_url }}" class="btn btn-outline-primary btn-sm">
+                    Join Our Group <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
             </div>
-            <div class="row" style="padding-bottom:10px;">
-                <div class="col-sm-6">
-                    <p>some text</p>
-                </div>
-                <div class="col-sm-6" style="height:50vh;">
-                    <video class="video" autoplay muted loop preload="auto" style="height:50vh; object-fit:scale-down;">
-                        <source src="{{ '/video/halo.webm' | relative_url }}" type="video/webm">
+
+            <div class="col-lg-5">
+                <div class="ratio ratio-1x1 shadow-lg rounded-3 overflow-hidden border border-secondary border-opacity-25"> 
+                    <video src="{{ 'assets/video/halo_40s.webm' | relative_url }}"
+                           poster="{{ 'assets/img/volume_rendering.webp' | relative_url }}"
+                           autoplay loop muted playsinline preload="auto">
                     </video>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- News Section -->
-    <!-- <section id="news" class="bg-halo-bug-fixed">
-        <div class="container bg-trans-light-gray border-black">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">News</h2>
-                </div>
-                <div class="col-lg-12">
-                    <h4>date</h4>
-                    <p class="text-muted">event, pics</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="/news/latest.html" class="text-muted"><p class="large">More archived news ...</p></a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Projects Section -->
-    <!-- <section id="projects" class="bg-halo-bug-fixed">
-        <div class="container bg-trans-light-gray border-black">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Research</h2>
-                    <h3 class="section-subheading text-muted">Some text.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ '/img/colliding_waveDM_halo.webp' | relative_url }}" class="img-responsive img-project" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Project name 1</h4>
-                        <p class="text-muted">Project subtitle 1</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ '/img/wave_function.webp' | relative_url }}" class="img-responsive img-project" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Project name 2</h4>
-                        <p class="text-muted">Project subtitle 2</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ '/img/wave_function.webp' | relative_url }}" class="img-responsive img-project" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ '/img/wave_function.webp' | relative_url }}" class="img-responsive img-project" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ '/img/wave_function.webp' | relative_url }}" class="img-responsive img-project" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="{{ '/img/wave_function.webp' | relative_url }}" class="img-responsive img-project" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Member Section -->
-    <!--<section id="members" class="bg-halo-bug-fixed">
-        <div class="container bg-trans-light-gray border-black">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Members</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <a href="{{ '/members.html' | relative_url }}#Hsi-Yu"><img src="{{ '/img/member/schive.webp' | relative_url }}" class="img-responsive img-circle img-team" alt=""></a>
-                        <h4>Hsi-Yu Schive</h4>
-                        <p class="text-muted">Team Leader</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="https://www.phys.ntu.edu.tw/enphysics/hyschive.html" target="_blank"><i class="fa-solid fa-landmark"></i></a>
-                            </li>
-                            <li><a href="https://github.com/hyschive" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            </li>
-                            <li><a href="https://orcid.org/0000-0002-1249-279X" target="_blank"><i class="fa-brands fa-orcid"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <a href="#"><img src="{{ '/img/member/undecided.webp' | relative_url }}" class="img-responsive img-circle img-team" alt=""></a>
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <a href="#"><img src="{{ '/img/member/undecided.webp' | relative_url }}" class="img-responsive img-circle img-team" alt=""></a>
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <a href="{{ '/members.html' | relative_url }}#hsinhao"><img src="{{ '/img/member/hsinhao.webp' | relative_url }}" class="img-responsive img-circle img-team" alt=""></a>
-                        <h4>Hsinhao Huang</h4>
-                        <p class="text-muted">Research Assitance</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="https://github.com/hsinhaoHHuang"><i class="fa-brands fa-github"></i></a>
-                            </li>
-                            <li><a href="https://hsinhaohhuang.github.io/"><i class="fa-solid fa-user"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <a href="#"><img src="{{ '/img/member/undecided.webp' | relative_url }}" class="img-responsive img-circle img-team" alt=""></a>
-                        <h4>This might be you</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                Member template
-                * Notice: Make sure that the linked id of the image has the class `anchor-offset` in members.html
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <a href="#"><img src="{{ '/img/member/undecided.webp' | relative_url }}" class="img-responsive img-circle img-team" alt=""></a>
-                        <h4>This might be you</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="{{ '/members.html' | relative_url }}" class="text-muted"><p class="large">More details about our group members ...</p></a>
-                </div>
-            </div>
-        </div>
-    </section>
-     -->
-
-    <!-- Publications Section -->
-    <!-- <section id="publications" class="bg-halo-bug-fixed">
-        <div class="container bg-trans-light-gray border-black">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Publications</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ol class="publication-ol"> -->
+    </div>
+</section>

@@ -1,0 +1,76 @@
+{% comment %}
+    Bootstrap 5 Pagination Template
+    Used to render pagination controls at the bottom of news lists.
+    Requires jekyll-paginate plugin.
+{% endcomment %}
+
+{% if paginator.total_pages > 1 %}
+<nav aria-label="Page navigation" class="mt-5">
+    <ul class="pagination justify-content-center">
+        
+        {% if paginator.previous_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="d-none d-sm-inline ms-1">Previous</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="d-none d-sm-inline ms-1">Previous</span>
+                </span>
+            </li>
+        {% endif %}
+
+        <!-- {% for page in (1..paginator.total_pages) %}
+            <li class="page-item {% if page == paginator.page %}active{% endif %}">
+                {% if page == paginator.page %}
+                    <span class="page-link">{{ page }}</span>
+                {% elsif page == 1 %}
+                    <a class="page-link" href="{{ site.paginate_path | relative_url | replace: 'page/:num', '' }}">
+                        {{ page }}
+                    </a>
+                {% else %}
+                    <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">
+                        {{ page }}
+                    </a>
+                {% endif %}
+            </li>
+        {% endfor %} -->
+
+
+        {% for trail in paginator.page_trail %}
+            <li class="page-item">
+                {% if page.url == trail.path %}
+                    <span class="page-link monospaced">{{ trail.num }}</span>
+                {% else %}
+                    <a class="page-link monospaced" href="{{ trail.path | relative_url | replace: 'index.html', ''}}" title="{{trail.title}}">{{ trail.num }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+
+        {% if paginator.next_page %}
+            <li class="page-item">
+                <a class="page-link" href="{{ paginator.next_page_path | relative_url }}" aria-label="Next">
+                    <span class="d-none d-sm-inline me-1">Next</span>
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link" aria-label="Next">
+                    <span class="d-none d-sm-inline me-1">Next</span>
+                    <span aria-hidden="true">&raquo;</span>
+                </span>
+            </li>
+        {% endif %}
+        
+    </ul>
+</nav>
+
+<div class="text-center text-secondary small mt-2">
+    Page {{ paginator.page }} of {{ paginator.total_pages }}
+</div>
+{% endif %}

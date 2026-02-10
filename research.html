@@ -1,0 +1,50 @@
+---
+layout: default
+title: Projects - CALab
+permalink: /research/
+
+hero_title: Research
+hero_bg_image: /assets/img/colliding_waveDM_halo.webp
+---
+
+{% assign all_projects = site.projects | where: "tags", "main" | sort: 'sort_order' %}
+
+<section id="projects">
+    <div class="container">
+        <div class="row g-4"> 
+            {% for project in all_projects %}
+            <div class="col-md-4 col-sm-6">
+                <a href="#portfolioModal-{{ project.modal_id }}" class="d-block position-relative text-decoration-none" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#portfolioModal-{{ project.modal_id }}">
+                    <img src="{{ project.image | relative_url }}" class="img-project-thumb rounded" alt="{{ project.title }} thumbnail">
+
+                <div class="p-2 text-center">
+                    <h4 class="py-2 text-white">{{ project.title }}</h4>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include project_modals.html %}
+
+
+<section id="sponsorship" class="pt-5 mt-5">
+    <div class="container bg-body-tertiary border pb-2">
+            <h2 class="mb-4 pb-2 text-center">Sponsors</h2>
+        <div class="row justify-content-center align-items-center px-4 g-5">
+            <div class="col-6 col-md-4 text-center">
+                <img src="{{ 'assets/img/NTU.jpg' | relative_url }}" class="img-fluid img-sponsor" alt="NTU Logo">
+            </div>
+            <div class="col-6 col-md-4 text-center">
+                <img src="{{ 'assets/img/NSTC.png' | relative_url }}" class="img-fluid img-sponsor bg-white" alt="NSTC Logo">
+            </div>
+            <div class="col-6 col-md-4 text-center">
+                <img src="{{ 'assets/img/NCTS.png' | relative_url }}" class="img-fluid img-sponsor bg-white" alt="NCTS Logo">
+            </div>
+        </div>
+    </div>
+</section>
