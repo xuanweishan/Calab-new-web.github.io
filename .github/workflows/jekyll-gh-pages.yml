@@ -4,7 +4,7 @@ name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["Test-CDN/jekyll-collection", "main"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,7 +44,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            # 使用 [skip ci] 避免觸發重複的部署工作流
             git commit -m "chore: auto-update publications.yml [skip ci]"
             git push
           fi
