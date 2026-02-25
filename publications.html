@@ -114,12 +114,12 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                     </a>
                 </div>
                 <div class="">
-                    {{ pub.authors }}
+                    {{ pub.authors }},
                     <span style="font-style: italic;">{{ pub.journal }}</span>
 
-                    {% if pub.volume %} {{ pub.volume }},{% endif %}
-                    {% if pub.pages %} {{ pub.pages }}{% endif %}
-                    ({{ pub.year }}).
+                    {%- if pub.volume != '' %} {{ pub.volume }}{% endif -%}
+                    {%- if pub.pages != '' %}, {{ pub.pages }}{% endif -%}
+                    <span> ({{ pub.year }}).</span>
                 </div>
             </li>
             {% endfor %}

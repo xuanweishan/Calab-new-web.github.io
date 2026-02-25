@@ -194,12 +194,24 @@ def convert():
         title = clean_title(title)
         clean_title_key = re.sub(r'\W+', '', title.lower())
 
+        # Determine the venue (journal, booktitle, series, etc.)
+        venue_raw = (
+            entry.get('journal') or 
+            entry.get('booktitle') or 
+            entry.get('series') or
+            entry.get('publisher') or 
+            entry.get('howpublished') or 
+            entry.get('school') or
+            entry.get('institution') or
+            ""
+        )
+
         pub = {
             'year': entry.get('year', ''),
             'month': entry.get('month', ''),
             'title': title,
             'authors': process_author_name(authors, member_db),
-            'journal': process_journal_name(entry.get('journal', '')),
+            'journal': process_journal_name(venue_raw),
             'volume': entry.get('volume', ''),
             'number': entry.get('number', ''),
             'pages': entry.get('pages', ''),

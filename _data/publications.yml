@@ -127,7 +127,7 @@
   title: 'Introducing yt 4.0: Analysis and Visualization of Volumetric Data'
   authors: Turk M. J., Smith B. D., Oishi J. S., <strong>H.-Y. Schive</strong>, and
     et.al
-  journal: ''
+  journal: The yt Project
   volume: ''
   number: ''
   pages: ''
@@ -197,7 +197,7 @@
   title: 'Libyt: A Tool for Parallel In Situ Analysis with yt, Python, and Jupyter'
   authors: <strong>Shin-Rong Tsai</strong>, <strong>Hsi-Yu Schive</strong>, and Matthew
     Turk
-  journal: ''
+  journal: Proceedings of the Platform for Advanced Scientific Computing Conference
   volume: ''
   number: ''
   pages: ''
@@ -205,20 +205,6 @@
   type: inproceedings
   tags:
   - GAMER Development
-- year: '2023'
-  month: July
-  title: Lighting up the Crinkly Spacetime of Dark Matter
-  authors: Alfred Amruth, Tom Broadhurst, Jeremy Lim, Masamune Oguri, George F. Smoot,
-    Jose M. Diego, Enoch Leung, Razieh Emami, Juno Li, <strong>Tzihong Chiueh</strong>,
-    <strong>Hsi-Yu Schive</strong>, Michael Yeung, and Sung Kei Li
-  journal: ''
-  volume: ''
-  number: ''
-  pages: '1887'
-  link_value: https://ui.adsabs.harvard.edu/abs/2023eas..conf.1887A
-  type: inproceedings
-  tags:
-  - FDM
 - year: '2023'
   month: June
   title: Einstein rings modulated by wavelike dark matter from anomalies in gravitationally
@@ -288,20 +274,6 @@
   type: article
   tags:
   - FDM
-- year: '2022'
-  month: April
-  title: 'Hitting A Brick Wall: Simulating the Interaction of a Relativistic Jet with
-    an ICM/Lobe Interface in Cygnus A'
-  authors: John ZuHone, Paul Nulsen, <strong>Po-Hsun Tseng</strong>, and <strong>Hsi-Yu
-    Schive</strong>
-  journal: ''
-  volume: '19'
-  number: ''
-  pages: '106.26'
-  link_value: https://ui.adsabs.harvard.edu/abs/2022HEAD...1910626Z
-  type: inproceedings
-  tags:
-  - GAMER Applications
 - year: '2021'
   month: July
   title: An adaptive mesh, GPU-accelerated, and error minimized special relativistic
@@ -601,20 +573,6 @@
   type: article
   tags:
   - GAMER Applications
-- year: '2017'
-  month: January
-  title: A complete waveform model for compact binaries on eccentric orbits
-  authors: Daniel George, Eliu Huerta, Prayush Kumar, Bhanu Agarwal, <strong>Hsi-Yu
-    Schive</strong>, Harald Pfeiffer, Tony Chu, Michael Boyle, Daniel Hemberger, Lawrence
-    Kidder, Mark Scheel, and Bela Szilagyi
-  journal: ''
-  volume: '2017'
-  number: ''
-  pages: X2.004
-  link_value: https://ui.adsabs.harvard.edu/abs/2017APS..APR.X2004G
-  type: inproceedings
-  tags:
-  - FDM
 - year: '2016'
   month: February
   title: Contrasting Galaxy Formation from Quantum Wave Dark Matter, $\psi$DM, with
@@ -673,6 +631,20 @@
   - FDM
 - year: '2012'
   month: ''
+  title: Directionally unsplit hydrodynamic schemes with hybrid MPI/OpenMP/GPU parallelization
+    in AMR
+  authors: <strong>Hsi-Yu Schive</strong>, <strong>Ui-Han Zhang</strong>, and <strong>Tzihong
+    Chiueh</strong>
+  journal: The International Journal of High Performance Computing Applications
+  volume: '26'
+  number: '4'
+  pages: 367-377
+  link_value: https://doi.org/10.1177/1094342011428146
+  type: article
+  tags:
+  - GAMER Development
+- year: '2012'
+  month: ''
   title: Numerical simulations of acoustic waves with the graphic acceleration GAMER
     code
   authors: K. Murawski, and <strong>H.-Y. Schive</strong>
@@ -701,7 +673,7 @@
   month: April
   title: GAMER with out-of-core computation
   authors: <strong>Hsi-Yu Schive</strong>, Yu-Chih Tsai, and <strong>Tzihong Chiueh</strong>
-  journal: ''
+  journal: Computational Star Formation
   volume: '270'
   number: ''
   pages: 401-404
@@ -710,26 +682,13 @@
   tags:
   - GAMER Development
 - year: '2011'
-  month: March
-  title: Directionally Unsplit Hydrodynamic Schemes with Hybrid MPI/OpenMP/GPU Parallelization
-    in AMR
-  authors: <strong>Hsi-Yu Schive</strong>, <strong>Ui-Han Zhang</strong>, and <strong>Tzihong
-    Chiueh</strong>
-  journal: arXiv e-prints
-  volume: ''
-  number: ''
-  pages: arXiv:1103.3373
-  link_value: https://doi.org/10.48550/arXiv.1103.3373
-  type: article
-  tags:
-  - GAMER Development
-- year: '2011'
   month: ''
   title: Multi-science applications with single codebase - GAMER - for massively parallel
     architectures
   authors: Hemant Shukla, <strong>Hsi-Yu Schive</strong>, <strong>Tak-Pong Woo</strong>,
     and <strong>Tzihong Chiueh</strong>
-  journal: ''
+  journal: Proceedings of 2011 International Conference for High Performance Computing,
+    Networking, Storage and Analysis
   volume: ''
   number: ''
   pages: ''
@@ -743,7 +702,7 @@
     Continents
   authors: Rainer Spurzem, Peter Berczik, Ingo Berentzen, Wei Ge, Xiaowei Wang, <strong>Hsi-yu
     Schive</strong>, Keigo Nitadori, Tsuyoshi Hamada, and José Fiestas
-  journal: ''
+  journal: Large-Scale Computing
   volume: ''
   number: ''
   pages: 35-58
