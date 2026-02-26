@@ -219,8 +219,8 @@ html {
     }
 
     .link-academic {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 0.9rem;
+        font-size: 1.2rem;
+        font-weight: 700;
         color: var(--bs-primary);
         text-decoration: none;
         border-bottom: 1px solid transparent;
@@ -394,7 +394,7 @@ html {
    ============================================================ */
 
 .img-team { width: 150px; height: 150px; object-fit: cover; margin: 0 auto; display: block; }
-.img-sponsor { max-height: 50px; width: auto; object-fit: contain; }
+.img-sponsor { height: 80px; width: auto; object-fit: contain; }
 
 /* ============================================================
    09. FOOTER
