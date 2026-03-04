@@ -313,3 +313,12 @@
   image: "/assets/img/member/undecided.webp"
   email: "r07222044@ntu.edu.tw"
   github: "CliffLinTw"
+
+- english_name: "Jyun-Han Shih"
+  role: "doctoral"
+  native_name: "石郡翰"
+  image: "/assets/img/member/undecided.webp"
+  email: "d14222035@ntu.edu.tw"
+  github: "Jyun-Han"
+  bio:
+    - "I'm a PhD student in Theoretical Physics at NTU. My studies focus on  AGN jet physics and X-ray cavities, understanding their evolution, physical properties, and observational implications to better realize AGN feedback."
