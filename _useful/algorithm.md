@@ -1,5 +1,5 @@
 ---
-title: Algorithm
+title: Algorithms
 icon_class: solid
 icon_solid: code
 sort_order: 6

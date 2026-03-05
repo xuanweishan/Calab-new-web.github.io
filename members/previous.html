@@ -9,7 +9,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
 
 <section id="previous-members-list" class="">
     <div class="container">
-        {% assign all_members = site.data.members %}
+        {% assign all_members = site.data.members | sort: "english_name" %}
         {% assign member_roles = site.data.member_roles.roles %}
 
         {% for role in member_roles %}
