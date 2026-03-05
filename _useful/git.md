@@ -8,4 +8,6 @@ links:
     url: https://gitbook.tw
   - name: How to Create and Sync Git and GitHub Repositories
     url: https://www.freecodecamp.org/news/create-and-sync-git-and-github-repositories/
+  - name: How Git Actually Works
+    url: https://www.youtube.com/watch?v=Ala6PHlYjmw
 ---
