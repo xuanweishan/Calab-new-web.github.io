@@ -44,12 +44,14 @@
   image: "/assets/img/member/undecided.webp"
 
 - english_name: "Wei-Chun Lin"
-  role: "research-assistants"
+  role: "assistants"
   native_name: "林蔚君"
   image: "/assets/img/member/undecided.webp"
+  bio:
+    - "Administrative assistant"
 
 - english_name: Hsinhao Huang
-  role: "research-assistants"
+  role: "assistants"
   native_name: "黃新豪"
   image: "/assets/img/member/hsinhao.webp"
   email: "hsinaohuang@gmail.com"
@@ -135,12 +137,14 @@
 - english_name: "Hsin Fan"
   role: "doctoral"
   native_name: "范昕"
-  image: "/assets/img/member/undecided.webp"
+  image: "/assets/img/member/hsin.webp"
   email: "hsin.fan09@gmail.com"
   github: "hsinfan1996"
+  bio:
+    - "I am an observational astronomer fascinated by how we can use the largest structures in the universe to understand its fundamental laws. My work focuses on optimizing Bayesian frameworks to analyze galaxy cluster observables and push the boundaries of precision cosmology. I am also a developer at the LSST CLMM and CCL topical teams, where I help build the tools necessary for the next generation of survey data. Before joining the group here at NTU and the ASIAA Cosmological Group, I completed my studies at Rutgers and Stony Brook University, focusing on the mass calibration of galaxy clusters with gravitational lensing."
 
 - english_name: "Wei-Hsuan Tseng"
-  role: "research-assistants"
+  role: "assistants"
   native_name: "曾煒軒"
   image: "/assets/img/member/weihsuan.webp"
   email: "xuanweishan@gmail.com"
@@ -229,7 +233,7 @@
   github: "rukia175"
 
 - english_name: "Hsun-Yeong Yang"
-  role: "previous"
+  role: "assistants"
   native_name: "楊巽詠"
   image: "/assets/img/member/undecided.webp"
   email: "b04501013@ntu.edu.tw"

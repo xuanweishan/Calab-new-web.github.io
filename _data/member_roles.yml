@@ -9,7 +9,7 @@ roles:
     title: Master Students
   - id: undergraduate
     title: Undergraduate Students
-  - id: research-assistants
-    title: Research/Administrative Assistants
+  - id: assistants
+    title: Assistants
   - id: previous
     title: Previous Members
