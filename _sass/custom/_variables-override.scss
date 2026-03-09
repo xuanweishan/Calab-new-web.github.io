@@ -1,8 +1,10 @@
 // --- Brand Colors ---
 $custom-primary-color:             #fed136;
+$custom-highlight-color:           #71edeb;
 
 // --- Bootstrap Variable Overrides ---
 $primary:              $custom-primary-color;
+$info:                 $custom-highlight-color;
 
 // --- Typography ---
 $font-family-base: 'Montserrat', sans-serif;
