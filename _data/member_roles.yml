@@ -2,14 +2,12 @@ roles:
   - id: faculty
     title: Faculty
   - id: postdoc
-    title: Postdoctoral Research Fellows
+    title: Postdoc
   - id: doctoral
-    title: Doctoral Students
+    title: PhD
   - id: master
-    title: Master Students
+    title: Master
   - id: undergraduate
-    title: Undergraduate Students
-  - id: assistants
-    title: Assistants
-  - id: intern
-    title: Interns
+    title: Undergraduate
+  - id: assistants/interns
+    title: Assistant / Intern

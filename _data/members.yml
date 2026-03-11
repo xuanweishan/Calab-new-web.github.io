@@ -54,15 +54,16 @@
     - "I am a PhD student in Theoretical Physics at NTU, driven by a deep interest in the fundamental laws of the universe, particularly in General Relativistic hydrodynamics. My current research focuses on incorporating these relativistic effects into the GAMER code for cosmological simulations. By integrating such dynamics into our numerical models, I aim to explore how they shape the evolution of the early universe. Ultimately, I hope these advanced computational tools will provide crucial theoretical insights to address the puzzling early-universe observations recently revealed by the James Webb Space Telescope (JWST)."
 
 - english_name: "Wei-Chun Lin"
-  role: "assistants"
+  role: "assistants/interns"
   status: "current"
   native_name: "林蔚君"
   image: "/assets/img/member/undecided.webp"
+  begin: 2022
   bio:
     - "Administrative assistant"
 
 - english_name: Hsinhao Huang
-  role: "assistants"
+  role: "assistants/interns"
   status: "current"
   native_name: "黃新豪"
   image: "/assets/img/member/hsinhao.webp"
@@ -85,7 +86,7 @@
   end: 2025
 
 - english_name: "Barry T. Chiang"
-  role: "intern"
+  role: "assistants/interns"
   status: "previous"
   native_name: "江梓瑞"
   image: "/assets/img/member/barry.webp"
@@ -172,7 +173,7 @@
     - "I am an observational astronomer fascinated by how we can use the largest structures in the universe to understand its fundamental laws. My work focuses on optimizing Bayesian frameworks to analyze galaxy cluster observables and push the boundaries of precision cosmology. I am also a developer at the LSST CLMM and CCL topical teams, where I help build the tools necessary for the next generation of survey data. Before joining the group here at NTU and the ASIAA Cosmology Group, I completed my studies at Rutgers and Stony Brook University, focusing on the mass calibration of galaxy clusters with gravitational lensing."
 
 - english_name: "Wei-Hsuan Tseng"
-  role: "assistants"
+  role: "assistants/interns"
   status: "current"
   native_name: "曾煒軒"
   image: "/assets/img/member/weihsuan.webp"
@@ -238,14 +239,6 @@
   github: "cindytsai"
   end: 2022
 
-- english_name: "Yi-Hau Hua"
-  role: "master"
-  status: "previous"
-  native_name: "華奕豪"
-  image: "/assets/img/member/undecided.webp"
-  email: "r05244003@ntu.edu.tw"
-  begin: 2019
-
 - english_name: "Yi-Hsiung Hsu"
   role: "master"
   status: "previous"
@@ -255,14 +248,6 @@
   github: "YiHsiungHsu"
   begin: 2018
   end: 2021
-
-- english_name: "Po-Yen Shih"
-  role: "master"
-  status: "previous"
-  native_name: "施伯彥"
-  image: "/assets/img/member/undecided.webp"
-  email: "shihpoyen@yahoo.cm.tw"
-  end: 2017
 
 - english_name: "Bing-Qiao He"
   role: "master"
@@ -292,7 +277,7 @@
   end: 2024
 
 - english_name: "Hsun-Yeong Yang"
-  role: "assistants"
+  role: "assistants/interns"
   status: "current"
   native_name: "楊巽詠"
   image: "/assets/img/member/hsun-yeong.webp"
@@ -311,7 +296,7 @@
     - "H.-H. Sandy Chiu"
 
 - english_name: "Wen-Hua Wu"
-  role: "master"
+  role: "undergraduate"
   status: "previous"
   native_name: "吳文華"
   image: "/assets/img/member/undecided.webp"
@@ -319,41 +304,12 @@
   begin: 2021
   end: 2022
 
-- english_name: "I-Hsuan Wang"
-  role: "undergraduate"
-  status: "previous"
-  native_name: "汪宜萱"
-  image: "/assets/img/member/undecided.webp"
-  email: "candy6925@gmail.com"
-
 - english_name: "Pai-Jung Yang"
   role: "undergraduate"
   status: "privious"
   native_name: "楊百蓉"
   image: "/assets/img/member/undecided.webp"
   email: "joanne.pj.yang@gmail.com"
-
-- english_name: "Yu-Tsung Lu"
-  role: "undergraduate"
-  status: "previous"
-  native_name: "盧育宗"
-  image: "/assets/img/member/undecided.webp"
-  email: "b09204047@ntu.edu.tw"
-
-- english_name: "Li-Yuan Chen"
-  role: "undergraduate"
-  status: "previous"
-  native_name: "陳豊元"
-  image: "/assets/img/member/undecided.webp"
-  email: "hoshikutsu0506@gmail.com"
-
-- english_name: "Ying Chen"
-  role: "undergraduate"
-  status: "previous"
-  native_name: "陳瑩"
-  image: "/assets/img/member/undecided.webp"
-  email: "b08202024@ntu.edu.tw"
-  github: "gracechen24"
 
 - english_name: "Chen Shuang Shuang"
   role: "undergraduate"
@@ -383,7 +339,7 @@
 
 # Previous Members - Research Assistants
 - english_name: "Alexander Kunkel"
-  role: "intern"
+  role: "assistants/interns"
   status: "previous"
   image: "/assets/img/member/undecided.webp"
   email: "alexanderkunkel@ntu.edu.tw"
@@ -411,11 +367,3 @@
   begin: 2026
   bio:
     - "I'm a PhD student in Theoretical Physics at NTU. My studies focus on  AGN jet physics and X-ray cavities, understanding their evolution, physical properties, and observational implications to better realize AGN feedback."
-
-- english_name: "Wei-Ning Deng"
-  role: "master"
-  status: "previous"
-  native_name: "鄧為寧"
-  email: weininden@gmail.com
-  begin: 2020
-  end: 2022
