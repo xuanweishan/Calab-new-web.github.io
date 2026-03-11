@@ -15,6 +15,7 @@
    08. IMAGE & MEDIA UTILITIES
    09. FOOTER
    10. UTILITIES & ANIMATIONS
+   11. TABLES
    ============================================================ */
 
 /* ============================================================
@@ -437,4 +438,29 @@ html {
 @keyframes fadeOut {
     from { opacity: 1; transform: translateY(0); }
     to { opacity: 0; transform: translateY(10px); }
+}
+
+/* ============================================================
+   11. TABLES
+   ============================================================ */
+
+.members-table {
+    width: 80%;
+    white-space: nowrap;
+
+    .period {
+        font-family: monospace;
+        white-space: pre;
+        width: 12ch;
+    }
+}
+
+@media (min-width: 768px) {
+    .members-table {
+        width: 50%;
+
+        .period {
+            width: auto;
+        }
+    }
 }

@@ -11,5 +11,5 @@ roles:
     title: Undergraduate Students
   - id: assistants
     title: Assistants
-  - id: previous
-    title: Previous Members
+  - id: intern
+    title: Interns
