@@ -30,16 +30,19 @@ Member information is stored in `_data/members.yml`.
    - english_name: "Firstname Lastname"
      native_name: "姓名"
      role: "postdoc"                  # Use roles from _data/member_roles.yml
+     status: "current"                # Choose between "current" and "previous"
      image: "/assets/img/member/name.webp"
      website: "https://..."
      email: "user@example.com"
      github: "username"
+     begin: 2020
+     end: 2025                        # Only for previous members
       bio:
        - "Research interest line 1"
        - "Line 2"
      aliases: ["Lastname, F.", "Firstname L."] # Used to bold name in Publications
    ```
-4. **Alumni/Previous Members**: Simply change `role` to `previous`. They will automatically move to the "Previous Members" page.
+4. **Alumni/Previous Members**: Simply change `status` to `previous`. They will automatically move to the "Previous Members" page.
 5. **Images**: Upload square (1:1) WebP images to `assets/img/member/`.
 
 ### 🚀 Add/Update Research Projects

@@ -36,7 +36,11 @@
   role: "postdoc"
   status: "current"
   native_name: "張瑋瀚"
-  image: "/assets/img/member/undecided.webp"
+  image: "/assets/img/member/ui-han.webp"
+  email: "zhanguihan@gmail.com"
+  github: "zhanguihan"
+  bio:
+    - "My research focuses on the theoretical dynamics of wave dark matter, complemented by a secondary specialization in numerical simulations for magnetohydrodynamics (MHD)."
 
 - english_name: Jr-Hua Stephen Lien
   role: "doctoral"
@@ -139,6 +143,8 @@
   image: "/assets/img/member/undecided.webp"
   email: "b09202026@ntu.edu.tw"
   github: "bxliu"
+  bio:
+    - "Constraining Fuzzy Dark Matter particle mass through semi-analytical modeling and numerical simulations of tidal stripping and dynamical friction."
 
 - english_name: "Che-Wei Hsiang"
   role: "master"
