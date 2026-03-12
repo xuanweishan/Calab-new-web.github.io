@@ -17,7 +17,7 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
             {% assign role_title = role.title %}
 
             {% assign members_list = all_members | where: 'role', role_id | where: 'status', 'current' %}
-            {% if members_list.size > 0 %}
+            
             <div id="{{ role_id }}-section" class="pt-5 bg-body-tertiary border {% unless forloop.first %}mt-5{% endunless %}">
                 <div class="row">
                     <div class="col-lg-12 text-center">
@@ -26,12 +26,15 @@ hero_bg_image: /assets/img/colliding_waveDM_halo.webp
                 </div>
 
                 <div class="row pb-4 justify-content-center">
-                    {% for member in members_list %}
-                        {% include member_card.html member=member %}
-                    {% endfor %}
+                    {% if members_list.size > 0 %}
+                        {% for member in members_list %}
+                            {% include member_card.html member=member %}
+                        {% endfor %}
+                    {% else %}
+                        <span class="text-center text-secondary">Currently no {{ role_id }} members.</span>
+                    {% endif %}
                 </div>
             </div>
-            {% endif %}
         {% endfor %}
 
         <div class="row mt-5">

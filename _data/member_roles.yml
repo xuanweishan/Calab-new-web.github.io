@@ -8,6 +8,6 @@ roles:
   - id: master
     title: Master
   - id: undergraduate
-    title: Undergraduate
+    title: Undergrad
   - id: assistants/interns
     title: Assistant / Intern
